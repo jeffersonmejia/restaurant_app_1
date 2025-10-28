@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ingreso</title>
+		<link
+			rel="shortcut icon"
+			href="/restaurant_app_1/assets/favicon-CrMPpGzG.jpg"
+			type="image/x-icon"
+		/>
+		<script type="module" crossorigin src="/restaurant_app_1/assets/main-DMfzSGbP.js"></script>
+		<link rel="stylesheet" crossorigin href="/restaurant_app_1/assets/main-C5akNYVN.css">
+	</head>
+	<body
+		class="bg-white text-black fade"
+		data-dark
+		style="opacity: 0; transition: opacity 0.3s"
+	>
+		<main class="container-fluid mb-4 px-0">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="./">
+						<i class="bi bi-house-fill me-1"></i>Inicio
+					</a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarNav"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav ms-auto mb-2 mt-2">
+							<button
+								class="btn btn-outline-light d-flex align-items-center"
+								id="darkModeToggle"
+							>
+								<i class="bi bi-moon-fill me-2"></i> Dark Mode
+							</button>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<section class="row me-4 mt-4 d-md-grid" style="grid-template-columns: 60% 40%">
+				<article class="d-none d-md-block pe-4">
+					<figure
+						class="position-relative m-0 overflow-hidden"
+						style="
+							height: 550px;
+							border-top-right-radius: 1rem;
+							border-bottom-right-radius: 1rem;
+						"
+					>
+						<img
+							src="/restaurant_app_1/assets/signin_cover-D_TNL2KE.jpg"
+							alt=""
+							class="w-100 h-100 object-fit-cover d-block"
+						/>
+						<div
+							class="position-absolute top-0 start-0 w-100 h-100 bg-black bg-opacity-50"
+						></div>
+						<figcaption
+							class="position-absolute top-50 start-0 translate-middle-y ps-4 text-white"
+						>
+							<h1><i class="bi bi-clipboard-check me-2"></i>Gestiona tus pedidos</h1>
+							<ul class="mb-0">
+								<li><i class="bi bi-speedometer2 me-1"></i>Monitoreo instantáneo</li>
+								<li><i class="bi bi-basket-fill me-1"></i>Estadísticas</li>
+								<li>
+									<i class="bi bi-bar-chart-line-fill me-1"></i>Observa métricas de tu
+									negocio
+								</li>
+								<li>
+									<i class="bi bi-currency-dollar me-1"></i>Obtén sugerencias financieras
+								</li>
+							</ul>
+						</figcaption>
+					</figure>
+				</article>
+				<article>
+					<form action="">
+						<div class="section-form-data">
+							<div class="mb-3">
+								<label class="form-label"
+									><i class="bi bi-envelope-fill me-1"></i>Correo electrónico</label
+								>
+								<input
+									type="email"
+									class="form-control"
+									placeholder="ejemplo@gmail.com"
+								/>
+								<small
+									class="form-text text-danger d-none mt-2"
+									id="validationEmail"
+								></small>
+							</div>
+							<div class="mb-3">
+								<label class="form-label"
+									><i class="bi bi-lock-fill me-1"></i>Contraseña</label
+								>
+								<div class="input-group">
+									<span class="input-group-text"
+										><i class="bi bi-shield-lock-fill"></i
+									></span>
+									<input type="password" class="form-control" placeholder="********" />
+								</div>
+								<small class="form-text text-danger d-none mt-2" id="validationPassword"
+									>Ingresa una contraseña</small
+								>
+							</div>
+							<div class="d-flex justify-content-between mt-3">
+								<a href="./home.html" class="btn btn-primary"
+									><i class="bi bi-box-arrow-in-right me-1"></i>Ingresar</a
+								>
+								<div class="d-flex justify-content-center gap-1">
+									<span>¿No tienes cuenta?</span>
+									<a href="./signup.html" class="btn btn-link p-0">Regístrate</a>
+								</div>
+							</div>
+						</div>
+					</form>
+				</article>
+			</section>
+		</main>
+
+	</body>
+</html>
