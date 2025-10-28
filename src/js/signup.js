@@ -1,15 +1,4 @@
-const d = document,
-	$darkElements = d.querySelectorAll('[data-dark]')
-
-function initDarkMode() {
-	const dark = localStorage.getItem('darkMode') === 'true'
-	setDarkMode(dark)
-}
-
-function handleDarkModeToggle() {
-	const current = localStorage.getItem('darkMode') === 'true'
-	setDarkMode(!current)
-}
+const d = document
 
 function handleProfilePhotoChange(input) {
 	const file = input.files[0]
@@ -22,50 +11,58 @@ function handleProfilePhotoChange(input) {
 		preview.classList.add('d-none')
 	}
 }
-function showPaymentSection() {
-	//if (!validateFormData()) return
+
+let currentSection = 1
+
+function showNextSection() {
 	const formDataSection = d.querySelector('.section-form-data')
+	const profileSection = d.querySelector('.section-form-profile')
 	const paymentSection = d.querySelector('.section-form-payment')
-	if (formDataSection && paymentSection) {
+	const btn = d.querySelector('.btn-primary')
+	if (btn.textContent.trim() === 'Registrarme') {
+		window.location.href = './signin.html'
+	} else if (currentSection === 1) {
 		formDataSection.classList.add('d-none')
+		profileSection.classList.remove('d-none')
+		currentSection++
+		btn.textContent = 'Continuar'
+	} else if (currentSection === 2) {
+		profileSection.classList.add('d-none')
 		paymentSection.classList.remove('d-none')
+		currentSection++
+		btn.textContent = 'Registrarme'
 	}
 }
 
-function showFormDataSection() {
+function showPreviousSection() {
 	const formDataSection = d.querySelector('.section-form-data')
+	const profileSection = d.querySelector('.section-form-profile')
 	const paymentSection = d.querySelector('.section-form-payment')
-	if (formDataSection && paymentSection) {
+	const btn = d.querySelector('.btn-primary')
+
+	if (currentSection === 3) {
 		paymentSection.classList.add('d-none')
+		profileSection.classList.remove('d-none')
+		currentSection--
+		btn.textContent = 'Continuar'
+	} else if (currentSection === 2) {
+		profileSection.classList.add('d-none')
 		formDataSection.classList.remove('d-none')
+		currentSection--
+		btn.textContent = 'Continuar'
+	} else {
+		window.location.href = './'
 	}
 }
-
-function setDarkMode(value) {
-	$darkElements.forEach((el) => {
-		el.classList.toggle('bg-dark', value)
-		el.classList.toggle('bg-white', !value)
-		el.classList.toggle('text-white', value)
-		el.classList.toggle('text-dark', !value)
-	})
-	localStorage.setItem('darkMode', value)
-}
-
-d.addEventListener('DOMContentLoaded', () => initDarkMode())
 
 d.addEventListener('click', (e) => {
-	if (e.target.matches('#darkModeToggle')) handleDarkModeToggle()
-	if (e.target.matches('.btn-primary')) showPaymentSection()
+	if (e.target.matches('.btn-primary')) showNextSection()
 	if (e.target.matches('a.btn')) {
 		e.preventDefault()
-		const paymentSection = d.querySelector('.section-form-payment')
-		if (paymentSection && !paymentSection.classList.contains('d-none')) {
-			showFormDataSection()
-		} else {
-			window.location.href = './'
-		}
+		showPreviousSection()
 	}
 })
+
 d.addEventListener('change', (e) => {
 	if (e.target.matches('#perfilFoto')) handleProfilePhotoChange(e.target)
 })

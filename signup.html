@@ -10,7 +10,11 @@
 			type="image/x-icon"
 		/>
 	</head>
-	<body class="bg-white text-black" data-dark>
+	<body
+		class="bg-white text-black fade"
+		data-dark
+		style="opacity: 0; transition: opacity 0.3s"
+	>
 		<main class="container-fluid mb-4 px-0">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 				<div class="container-fluid">
@@ -79,6 +83,9 @@
 						<div class="section-form-data">
 							<legend>
 								<h2><i class="bi bi-person-lines-fill me-1"></i>Registro</h2>
+								<h5 class="mb-3">
+									<i class="bi bi-person-vcard-fill me-1"></i>Datos personales
+								</h5>
 							</legend>
 							<div class="mb-3">
 								<input type="text" class="form-control" placeholder="Nombre empresa" />
@@ -97,11 +104,59 @@
 								>
 							</div>
 							<div class="mb-3">
+								<label class="form-label d-block"
+									><i class="bi bi-gender-ambiguous me-1"></i>Género</label
+								>
+								<div class="form-check form-check-inline">
+									<input
+										class="form-check-input"
+										type="radio"
+										name="genero"
+										id="masculino"
+										value="masculino"
+									/>
+									<label class="form-check-label" for="masculino"
+										><i class="bi bi-gender-male me-1"></i>Masculino</label
+									>
+								</div>
+								<div class="form-check form-check-inline">
+									<input
+										class="form-check-input"
+										type="radio"
+										name="genero"
+										id="femenino"
+										value="femenino"
+									/>
+									<label class="form-check-label" for="femenino"
+										><i class="bi bi-gender-female me-1"></i>Femenino</label
+									>
+								</div>
+								<div class="form-check form-check-inline">
+									<input
+										class="form-check-input"
+										type="radio"
+										name="genero"
+										id="otro"
+										value="otro"
+									/>
+									<label class="form-check-label" for="otro"
+										><i class="bi bi-gender-ambiguous me-1"></i>Otro</label
+									>
+								</div>
+							</div>
+							<div class="mb-3">
 								<input type="text" class="form-control" placeholder="Dirección" />
 								<small class="form-text text-danger d-none" id="validationAddress"
 									>Ingresa tu dirección</small
 								>
 							</div>
+						</div>
+
+						<div class="section-form-profile d-none">
+							<legend>
+								<h2><i class="bi bi-person-lines-fill me-1"></i>Registro</h2>
+								<h5 class="mb-3"><i class="bi bi-person-circle me-1"></i>Perfil</h5>
+							</legend>
 							<div class="mb-3">
 								<label class="form-label"
 									><i class="bi bi-envelope-fill me-1"></i>Correo electrónico</label
@@ -115,6 +170,20 @@
 									class="form-text text-danger d-none mt-2"
 									id="validationEmail"
 								></small>
+							</div>
+							<div class="mb-3">
+								<label class="form-label"
+									><i class="bi bi-lock-fill me-1"></i>Contraseña</label
+								>
+								<div class="input-group">
+									<span class="input-group-text"
+										><i class="bi bi-shield-lock-fill"></i
+									></span>
+									<input type="password" class="form-control" placeholder="********" />
+								</div>
+								<small class="form-text text-danger d-none mt-2" id="validationPassword"
+									>Ingresa una contraseña</small
+								>
 							</div>
 							<div class="mb-3">
 								<label class="form-label"
@@ -153,9 +222,11 @@
 								></small>
 							</div>
 						</div>
+
 						<div class="section-form-payment d-none">
 							<legend>
-								<h2><i class="bi bi-credit-card-2-front-fill me-1"></i>Método de pago</h2>
+								<h2><i class="bi bi-person-lines-fill me-1"></i>Registro</h2>
+								<h5><i class="bi bi-credit-card-2-front-fill me-1"></i>Método de pago</h5>
 							</legend>
 							<div class="mb-3">
 								<label class="form-label"
@@ -214,7 +285,15 @@
 									></small>
 								</div>
 							</div>
+							<div class="mb-3 form-check">
+								<input type="checkbox" class="form-check-input" id="terminos" />
+								<label class="form-check-label" for="terminos"
+									><i class="bi bi-file-earmark-text-fill me-1"></i>Acepto los términos y
+									condiciones</label
+								>
+							</div>
 						</div>
+
 						<div class="d-flex justify-content-end mt-3" role="group">
 							<a href="./" class="btn text-black" data-dark=""
 								><i class="bi bi-arrow-left-circle-fill me-1"></i>Volver</a
